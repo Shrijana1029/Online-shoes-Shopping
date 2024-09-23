@@ -1,5 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_app_flutter/cart_provider.dart';
 import 'package:shop_app_flutter/global_variables.dart';
 
 class ProductDetailPage extends StatefulWidget {
@@ -19,6 +21,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     // TODO: implement initState
     super.initState();
     selectedSize = widget.product['sizes'][0];
+  }
+  void onTap(){
+    Provider.of<CartProvider>(
+        context, listen: false).addProuct(widget.product);
   }
   @override
   Widget build(BuildContext context) {
@@ -90,7 +96,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   padding: const EdgeInsets.all(20.0),
                   child: ElevatedButton(
 
-                      onPressed: (){},
+                      onPressed: onTap,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Theme.of(context).colorScheme.primary,
                         minimumSize: const Size(double.infinity, 50),

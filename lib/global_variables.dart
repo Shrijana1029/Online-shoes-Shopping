@@ -41,7 +41,7 @@ final cart =[
   { 'id' : '5',
     'title': 'Women\'s Goldstar Shoes',
     'price': 43.3,
-    'sizes' : [8,4,2,9],
+    'sizes' : 8,
     'company': 'Goldstar',
     'imageUrl': 'assets/images/shoes_1.png'
 
